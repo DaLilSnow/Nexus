@@ -15,9 +15,11 @@
     <ClInclude Include="src\Nexus\Application.h" />
     <ClInclude Include="src\Nexus\Core.h" />
     <ClInclude Include="src\Nexus\EntryPoint.h" />
+    <ClInclude Include="src\Nexus\Log\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nexus\Application.cpp" />
+    <ClCompile Include="src\Nexus\Log\Log.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -67,6 +69,7 @@
       <PreprocessorDefinitions>NX_PLATFORM_WINDOWS;NX_BUILD_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Nexus\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <PreprocessorDefinitions>NX_PLATFORM_WINDOWS;NX_BUILD_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Nexus\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

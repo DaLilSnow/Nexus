@@ -5,7 +5,7 @@ class Sandbox : public Nexus::Application {
 
 public:
 	Sandbox() {
-
+		NX_INFO("Hello from {0}!", "Sandbox");
 	}
 
 	~Sandbox() {
