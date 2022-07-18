@@ -1,8 +1,9 @@
 #pragma once
 #include "nxpch.h"
-#include <GLFW/glfw3.h>
 
 #include "Nexus/Window/Window.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Nexus {
 

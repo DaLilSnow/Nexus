@@ -19,3 +19,5 @@
 	#define NX_CORE_ASSERT(x, ...)
 	#define NX_ASSERT(x, ...)
 #endif
+
+#define NX_BIND_FN(x) std::bind(&x, this, std::placeholders::_1)

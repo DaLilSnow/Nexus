@@ -6,7 +6,7 @@ namespace Nexus {
 
 	enum class EventType {
 		None = 0,
-		WindowClosed, WindowResized, WindowFocus, WindowLostFocus, WindowMoved,
+		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		KeyPressed, KeyReleased,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
@@ -35,9 +35,11 @@ namespace Nexus {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category) {
+		inline bool IsInCategory(EventCategory category) const {
 			return GetCategoryFlags() & category;
 		}
+
+		inline bool IsHandled() const { return m_Handled; }
 
 	protected:
 		bool m_Handled = false;

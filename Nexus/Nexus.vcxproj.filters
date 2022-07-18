@@ -10,6 +10,12 @@
     <Filter Include="Nexus\Event\Types">
       <UniqueIdentifier>{6D7943E6-D98F-417C-2207-CD9D8E5C1204}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Nexus\Gui">
+      <UniqueIdentifier>{0C0774D4-7871-284B-C1AF-D9F02D5906A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nexus\Layer">
+      <UniqueIdentifier>{84CEE1C1-F083-5AB7-7978-548EE52C51BB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Nexus\Log">
       <UniqueIdentifier>{891B74D4-F585-284B-3EC4-D9F0AA6D06A0}</UniqueIdentifier>
     </Filter>
@@ -46,6 +52,15 @@
     <ClInclude Include="src\Nexus\Event\Types\MouseEvent.h">
       <Filter>Nexus\Event\Types</Filter>
     </ClInclude>
+    <ClInclude Include="src\Nexus\Gui\GuiLayer.h">
+      <Filter>Nexus\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Layer\Layer.h">
+      <Filter>Nexus\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Layer\LayerStack.h">
+      <Filter>Nexus\Layer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Nexus\Log\Log.h">
       <Filter>Nexus\Log</Filter>
     </ClInclude>
@@ -60,6 +75,15 @@
   <ItemGroup>
     <ClCompile Include="src\Nexus\Application.cpp">
       <Filter>Nexus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nexus\Gui\GuiLayer.cpp">
+      <Filter>Nexus\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nexus\Layer\Layer.cpp">
+      <Filter>Nexus\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nexus\Layer\LayerStack.cpp">
+      <Filter>Nexus\Layer</Filter>
     </ClCompile>
     <ClCompile Include="src\Nexus\Log\Log.cpp">
       <Filter>Nexus\Log</Filter>

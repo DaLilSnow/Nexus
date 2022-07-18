@@ -1,3 +1,9 @@
 [submodule "Nexus/vendor/spdlog"]
 	path = Nexus/vendor/spdlog
 	url = https://github.com/DaLilSnow/spdlog
+[submodule "Nexus/vendor/GLFW"]
+	path = Nexus/vendor/GLFW
+	url = https://github.com/glfw/glfw
+[submodule "Nexus/vendor/ImGui"]
+	path = Nexus/vendor/ImGui
+	url = https://github.com/ocornut/imgui

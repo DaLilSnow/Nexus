@@ -1,7 +1,6 @@
 #pragma once
 #include "nxpch.h"
 
-#include "Nexus/Core.h"
 #include "Nexus/Event/EventSystem.h"
 
 namespace Nexus {

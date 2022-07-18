@@ -10,9 +10,13 @@ workspace "Nexus"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Nexus/vendor/glfw/include"
+IncludeDir["GLFW"] = "Nexus/vendor/GLFW/include"
+IncludeDir["Glad"] = "Nexus/vendor/Glad/include"
+IncludeDir["ImGui"] = "Nexus/vendor/ImGui/include"
 
-include "Nexus/vendor/glfw"
+include "Nexus/vendor/GLFW"
+include "Nexus/vendor/Glad"
+include "Nexus/vendor/ImGui"
 
 project "Nexus"
 	location "Nexus"
@@ -33,11 +37,15 @@ project "Nexus"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links {
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -48,7 +56,8 @@ project "Nexus"
 
 		defines {
 			"NX_PLATFORM_WINDOWS",
-			"NX_BUILD_DLL"
+			"NX_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
@@ -60,16 +69,19 @@ project "Nexus"
 			"NX_CONFIG_DEBUG",
 			"NX_ENABLE_ASSERTS"
 		}
+		buildoptions "/MDd"
 
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "NX_CONFIG_RELEASE"
 		optimize "on"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
 		defines "NX_CONFIG_DIST"
 		optimize "on"
+		buildoptions "/MD"
 	
 project "Sandbox"
 	location "Sandbox"
@@ -106,11 +118,14 @@ project "Sandbox"
 			"NX_ENABLE_ASSERTS"
 		}
 		symbols "on"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines "NX_CONFIG_RELEASE"
 		optimize "on"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
 		defines "NX_CONFIG_DIST"
 		optimize "on"	
+		buildoptions "/MD"
