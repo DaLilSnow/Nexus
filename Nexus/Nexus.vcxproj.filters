@@ -1,42 +1,72 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Nexus">
+      <UniqueIdentifier>{B8E7BB0D-24FC-E3BE-ED7D-871E5951E0EF}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Nexus\Event">
+      <UniqueIdentifier>{09536EC1-7508-E7B6-FEFC-E08D6AB1DDBA}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Nexus\Event\Types">
+      <UniqueIdentifier>{6D7943E6-D98F-417C-2207-CD9D8E5C1204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nexus\Log">
+      <UniqueIdentifier>{891B74D4-F585-284B-3EC4-D9F0AA6D06A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nexus\Platform">
+      <UniqueIdentifier>{0C5356BC-F820-4AC2-E1B4-BAE8CD212627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nexus\Platform\Windows">
+      <UniqueIdentifier>{4649DC06-3243-0559-1BB0-9B6907496BC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nexus\Window">
+      <UniqueIdentifier>{9F154F18-8B78-DEBC-34FE-16732040AA3F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Nexus\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Nexus.h" />
     <ClInclude Include="src\Nexus\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Nexus</Filter>
     </ClInclude>
-    <ClInclude Include="src\Nexus.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Nexus\Core.h">
+      <Filter>Nexus</Filter>
     </ClInclude>
     <ClInclude Include="src\Nexus\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Event\EventSystem.h">
+      <Filter>Nexus\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Event\Types\ApplicationEvent.h">
+      <Filter>Nexus\Event\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Event\Types\KeyEvent.h">
+      <Filter>Nexus\Event\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Event\Types\MouseEvent.h">
+      <Filter>Nexus\Event\Types</Filter>
     </ClInclude>
     <ClInclude Include="src\Nexus\Log\Log.h">
-      <Filter>Header Files</Filter>
+      <Filter>Nexus\Log</Filter>
     </ClInclude>
+    <ClInclude Include="src\Nexus\Platform\Windows\WindowsWindow.h">
+      <Filter>Nexus\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nexus\Window\Window.h">
+      <Filter>Nexus\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nxpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nexus\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Nexus</Filter>
     </ClCompile>
     <ClCompile Include="src\Nexus\Log\Log.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Nexus\Log</Filter>
     </ClCompile>
+    <ClCompile Include="src\Nexus\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Nexus\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nxpch.cpp" />
   </ItemGroup>
 </Project>

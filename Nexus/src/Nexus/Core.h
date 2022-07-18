@@ -9,3 +9,13 @@
 #else
 	#error Nexus only supports Windows
 #endif
+
+#define BIT(x) (1 << x)
+
+#if NX_ENABLE_ASSERTS
+	#define NX_CORE_ASSERT(x, ...) if (!(x)) { NX_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }
+	#define NX_ASSERT(x, ...) if (!(x)) { NX_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }
+#else
+	#define NX_CORE_ASSERT(x, ...)
+	#define NX_ASSERT(x, ...)
+#endif
