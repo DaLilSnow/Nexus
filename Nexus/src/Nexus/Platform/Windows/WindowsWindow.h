@@ -20,6 +20,8 @@ namespace Nexus {
 		virtual void SetEventCallback(const EventCallbackFn& callback) { m_Data.EventCallback = callback; }
 		virtual void SetVSync(bool enabled) override;
 		virtual bool IsVSync() const override { return m_Data.VSync; }
+
+		virtual inline void* GetNativeWindow() const { return m_Window; }
 	private:
 
 		virtual void Init(const WindowProps& props);

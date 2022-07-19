@@ -6,7 +6,10 @@
 
 namespace Nexus {
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application() {
+		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(NX_BIND_FN(Application::OnEvent));
 	}

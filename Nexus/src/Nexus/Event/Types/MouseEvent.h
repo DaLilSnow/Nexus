@@ -5,16 +5,19 @@
 namespace Nexus {
 
 	class NEXUS_API MouseButtonEvent : public Event {
-	protected:
-		MouseButtonEvent(int button) : m_Button(button) { }
-
+	public:
 		inline int GetButton() const { return m_Button; }
-
+		
 		std::string ToString() const override {
 			std::stringstream stream;
 			stream << GetName() << ": " << m_Button;
 			return stream.str();
 		}
+
+	protected:
+		MouseButtonEvent(int button) : m_Button(button) { }
+
+
 
 		EVENT_CLASS_CATEGORY(CategoryMouse | CategoryMouseButton | CategoryInput)
 
@@ -58,6 +61,9 @@ namespace Nexus {
 	class NEXUS_API MouseScrolledEvent : public Event {
 	public:
 		MouseScrolledEvent(float offX, float offY) : m_OffX(offX), m_OffY(offY) { }
+
+		inline float GetOffsetX() const { return m_OffX; }
+		inline float GetOffsetY() const { return m_OffY; }
 
 		std::string ToString() const override {
 			std::stringstream stream;

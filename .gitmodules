@@ -7,3 +7,6 @@
 [submodule "Nexus/vendor/ImGui"]
 	path = Nexus/vendor/ImGui
 	url = https://github.com/ocornut/imgui
+[submodule "Nexus/vendor/glm"]
+	path = Nexus/vendor/glm
+	url = https://github.com/g-truc/glm

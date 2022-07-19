@@ -11,7 +11,7 @@ namespace Nexus {
 
 		virtual void OnAttach() { }
 		virtual void OnUpdate() { }
-		virtual void OnEvent(const Event& evt) { }
+		virtual void OnEvent(Event& evt) { }
 		virtual void OnDetach() { }
 
 		virtual void Enable() final { m_Enabled = true; }

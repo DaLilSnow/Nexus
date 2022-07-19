@@ -41,4 +41,17 @@ namespace Nexus {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
+	class NEXUS_API KeyTypedEvent : public KeyEvent {
+	public:
+		KeyTypedEvent(int keyCode) : KeyEvent(keyCode) { }
+
+		std::string ToString() const override {
+			std::stringstream stream;
+			stream << "KeyPressedEvent: " << m_KeyCode;
+			return stream.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
+
 }

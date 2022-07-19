@@ -83,25 +83,34 @@ namespace Nexus {
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 				switch (action) {
-				case GLFW_PRESS: {
-					KeyPressedEvent evt(key, 0);
-					data.EventCallback(evt);
-					break;
+					case GLFW_PRESS: {
+						KeyPressedEvent evt(key, 0);
+						data.EventCallback(evt);
+						break;
+					}
+
+					case GLFW_RELEASE: {
+						KeyReleasedEvent evt(key);
+						data.EventCallback(evt);
+						break;
+					}
+
+					case GLFW_REPEAT: {
+						KeyPressedEvent evt(key, 1);
+						data.EventCallback(evt);
+						break;
+					}
 				}
 
-				case GLFW_RELEASE: {
-					KeyReleasedEvent evt(key);
-					data.EventCallback(evt);
-					break;
-				}
+			}
+		);
 
-				case GLFW_REPEAT: {
-					KeyPressedEvent evt(key, 1);
-					data.EventCallback(evt);
-					break;
-				}
-				}
-
+		// Chars
+		glfwSetCharCallback(m_Window,
+			[](GLFWwindow* window, unsigned int keycode) {
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent evt(keycode);
+				data.EventCallback(evt);
 			}
 		);
 
@@ -111,17 +120,17 @@ namespace Nexus {
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 				switch (action) {
-				case GLFW_PRESS: {
-					MouseButtonPressedEvent evt(button);
-					data.EventCallback(evt);
-					break;
-				}
+					case GLFW_PRESS: {
+						MouseButtonPressedEvent evt(button);
+						data.EventCallback(evt);
+						break;
+					}
 
-				case GLFW_RELEASE: {
-					MouseButtonReleasedEvent evt(button);
-					data.EventCallback(evt);
-					break;
-				}
+					case GLFW_RELEASE: {
+						MouseButtonReleasedEvent evt(button);
+						data.EventCallback(evt);
+						break;
+					}
 				}
 
 			}
